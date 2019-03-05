@@ -20,6 +20,7 @@ import com.captis.xboxmodule.utilitiesmicrosoft.LiveOperationListener;
 import org.json.JSONException;
 
 public class ExplorerActivity extends Activity {
+
     private class OperationListener implements LiveOperationListener {
         @Override
         public void onComplete(LiveOperation operation) {

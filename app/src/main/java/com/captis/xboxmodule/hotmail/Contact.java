@@ -3,6 +3,7 @@ package com.captis.xboxmodule.hotmail;
 import org.json.JSONObject;
 
 public class Contact {
+
     private final JSONObject mContact;
 
     public Contact(JSONObject contact) {

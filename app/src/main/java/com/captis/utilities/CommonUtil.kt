@@ -53,7 +53,7 @@ class CommonUtil {
         fun showProgress(context: Context) {
             progress = SpotsDialog.Builder()
                 .setContext(context)
-                .setMessage("Please wait")
+                .setMessage("Please wait....")
                 .build()
 
             progress?.show()

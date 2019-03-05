@@ -26,6 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ContactsActivity extends ListActivity {
+
     private class CreateContactDialog extends Dialog {
         public CreateContactDialog(Context context) {
             super(context);

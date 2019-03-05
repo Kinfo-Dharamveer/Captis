@@ -39,7 +39,7 @@ public class ViewProfileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_profile);
 
-        mNameTextView = (TextView)findViewById(R.id.nameTextView);
+        mNameTextView = findViewById(R.id.nameTextView);
 
         final MyApplication app = (MyApplication)getApplication();
 

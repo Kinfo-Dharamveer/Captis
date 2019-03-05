@@ -41,7 +41,7 @@ class HomeActivity : BaseActivity() {
             when (item.itemId) {
                 R.id.trending -> {
                     tv_toolbar_heading.text = resources.getString(R.string.trending_feed)
-//                    loadFragment(HealthFeedFragment())
+//                   loadFragment(HealthFeedFragment())
                     return true
                 }
                 R.id.following -> {

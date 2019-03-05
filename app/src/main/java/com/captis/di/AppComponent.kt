@@ -9,6 +9,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(ApplicationModule::class))
 interface AppComponent {
+
     fun inject(activity: SplashScreenActivity)
     fun inject(activity: LoginActivity)
     fun inject(activity: RegisterActivity)
@@ -18,4 +19,5 @@ interface AppComponent {
     fun inject(activity: VerifyCodeActivity)
 
     fun inject(activity: HomeActivity)
+
 }
