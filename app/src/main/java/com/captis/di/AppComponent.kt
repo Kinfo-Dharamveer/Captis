@@ -1,5 +1,6 @@
 package com.captis.di
 
+import com.captis.homemodule.activities.HomeActivity
 import com.captis.loginmodule.activities.*
 import dagger.Component
 
@@ -16,4 +17,5 @@ interface AppComponent {
     fun inject(activity: VerifyMobileActivity)
     fun inject(activity: VerifyCodeActivity)
 
+    fun inject(activity: HomeActivity)
 }

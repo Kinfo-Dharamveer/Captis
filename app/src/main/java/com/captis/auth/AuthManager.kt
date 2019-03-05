@@ -118,6 +118,14 @@ constructor(private val mPreference: SharedPreferences) {
         return mPreference.getString(Constants.KEY_TOKEN, "") ?: ""
     }
 
+    fun setIsLoggedIn(isLoggedIn: Boolean) {
+        mPreference.edit().putBoolean(Constants.KEY_LOGGED_IN, isLoggedIn).apply()
+    }
+
+    fun isLoggedIn(): Boolean {
+        return mPreference.getBoolean(Constants.KEY_LOGGED_IN, false)
+    }
+
     companion object {
         private val TAG = AuthManager::class.java.simpleName
     }

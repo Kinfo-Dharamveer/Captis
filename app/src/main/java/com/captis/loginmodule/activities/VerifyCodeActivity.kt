@@ -14,6 +14,7 @@ import com.captis.loginmodule.models.VerifyCodeModel
 import com.captis.loginmodule.parameters.VerifyCodeParameter
 import com.captis.utilities.CommonUtil
 import com.captis.utilities.Constants
+import com.captis.xboxmodule.SignInActivity
 import kotlinx.android.synthetic.main.activity_verify_code.*
 import kotlinx.android.synthetic.main.toolbar.*
 import retrofit2.Response
@@ -76,7 +77,8 @@ class VerifyCodeActivity : BaseActivity(), PostAPIResultCallback<VerifyCodeModel
         if (response.body() != null) {
             if (response.body()!!.isSuccess) {
                 CommonUtil.showShortToast(this, response.body()!!.message)
-                val intent = Intent(this, HomeActivity::class.java)
+                authManager.setIsLoggedIn(true)
+                val intent = Intent(this, SignInActivity::class.java)
                 startActivity(intent)
                 finishAffinity()
             } else {

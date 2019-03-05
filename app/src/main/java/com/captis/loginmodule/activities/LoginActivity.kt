@@ -15,6 +15,7 @@ import com.captis.loginmodule.LoginApiMethods
 import com.captis.loginmodule.parameters.LoginParameter
 import com.captis.loginmodule.models.LoginModel
 import com.captis.utilities.CommonUtil
+import com.captis.xboxmodule.SignInActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Response
 import javax.inject.Inject
@@ -96,13 +97,14 @@ class LoginActivity : BaseActivity(), PostAPIResultCallback<LoginModel> {
         if (response.body() != null) {
             if (response.body()!!.isSuccess) {
                 CommonUtil.showSnackbar(main_layout, response.body()!!.message)
-                if (response.body()!!.results.get(0).verificationType.equals("")){
-                    startActivity(Intent(this,VerifyMobileActivity::class.java))
-                }else{
-                    startActivity(Intent(this, HomeActivity::class.java))
+                if (response.body()!!.results.get(0).verificationType.equals("")) {
+                    authManager.setAccessToken(response.body()!!.results.get(0).token)
+                    startActivity(Intent(this, VerifyMobileActivity::class.java))
+                } else {
+                    authManager.setIsLoggedIn(true)
+                    startActivity(Intent(this, SignInActivity::class.java))
                     finishAffinity()
                 }
-
             } else {
                 CommonUtil.showSnackbar(main_layout, response.body()!!.message)
             }

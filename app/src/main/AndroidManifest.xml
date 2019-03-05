@@ -48,6 +48,16 @@
 
         <activity android:name=".homemodule.activities.HomeActivity"/>
 
+        <activity android:name=".xboxmodule.SignInActivity"/>
+        <activity android:name=".xboxmodule.ExplorerActivity"/>
+        <activity android:name=".xboxmodule.MainActivity"
+                  android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity android:name=".xboxmodule.skydrive.SkyDriveActivity"/>
+        <activity android:name=".xboxmodule.identity.ViewProfileActivity"/>
+        <activity android:name=".xboxmodule.util.FilePicker"/>
+        <activity android:name=".xboxmodule.hotmail.ContactsActivity"/>
+
     </application>
 
 </manifest>

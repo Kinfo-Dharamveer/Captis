@@ -7,6 +7,8 @@ import com.captis.MyApplication
 import com.captis.R
 import com.captis.auth.AuthManager
 import com.captis.basemodule.activities.BaseActivity
+import com.captis.homemodule.activities.HomeActivity
+import com.captis.xboxmodule.SignInActivity
 import javax.inject.Inject
 
 class SplashScreenActivity : BaseActivity(){
@@ -19,7 +21,13 @@ class SplashScreenActivity : BaseActivity(){
 
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-            setLoginIntent()
+            if (authManager.isLoggedIn()){
+                val intent = Intent(applicationContext, SignInActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else {
+                setLoginIntent()
+            }
         }
     }
 

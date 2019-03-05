@@ -21,6 +21,7 @@ class Constants {
         val KEY_CREATED = "created"
         val KEY_UPDATED = "updated"
         val KEY_TOKEN = "token"
+        val KEY_LOGGED_IN = "loggedIn"
 
         val KEY_CODE = "code"
 

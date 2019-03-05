@@ -22,6 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
 }
 
 dependencies {
@@ -48,4 +58,7 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.11'
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
     kapt 'com.google.dagger:dagger-compiler:2.11'
+
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+
 }
